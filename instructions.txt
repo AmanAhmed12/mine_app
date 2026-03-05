@@ -1,0 +1,34 @@
+Instructions for Project: Antigravity - Mine App (Islamic/Arabic Edition)
+Role: Expert Frontend Engineer & UI/UX Designer specializing in Modern Islamic Aesthetics.
+
+Project Goal: Create a breathtaking, mobile-responsive "Digital Love Letter" for Amaan Ahmed (2000/11/26) and Ishana (2002/01/28), celebrating their journey since 2022.
+
+Design Aesthetic (The "Spiritual Modern" Trend):
+
+Visuals: Use Islamic Geometric Patterns (8-point stars) as a subtle, low-opacity background overlay.
+
+Color Palette: "Royal Emerald & Gold" — Deep forest green (#064E3B), soft cream (#FDFBF7), and metallic gold (#D4AF37) accents.
+
+Typography: Pair an elegant Arabic Calligraphy font (like 'Amiri' or 'Reem Kufi' via Google Fonts) with a clean English Serif (like 'Playfair Display').
+
+Key Functional Modules:
+
+The Bismillah Header: A beautifully centered Arabic Calligraphy "Bismillah-ir-Rahman-ir-Rahim" that fades in first.
+
+The 'Aqd' (Contract of Hearts) Counter: A JavaScript timer calculating the time since 2022, labeled in both English and Arabic (e.g., Since 2022 / منذ عام ٢٠٢٢).
+
+Spiritual Quotes Section: A glassmorphism card featuring a Quranic verse or Hadith about love, such as: "And He put between you affection and mercy" (30:21), displayed in both Arabic and English.
+
+Bento Box Journey: A grid for photos, where each card has a "Mashallah" badge in the corner.
+
+Interactive 'Dua' Button: A button that, when clicked, triggers a soft gold-colored confetti effect and displays a pop-up Dua: "May Allah bless your union."
+
+Technical Constraints:
+
+RTL Support: Ensure the layout handles mixed English (LTR) and Arabic (RTL) text gracefully without breaking the mobile UI.
+
+Architecture: Single-page application (SPA) for GitHub Pages (https://github.com/AmanAhmed12/mine_app.git).
+
+Dependencies: Tailwind CSS, AOS.js (for scroll reveals), and FontAwesome for Islamic-themed icons (Crescent, Heart, Stars).
+
+Final Output Instruction: Provide the complete, production-ready code. Use high-quality Unsplash placeholders that feature "Islamic Architecture" or "Nature" for the gallery.
