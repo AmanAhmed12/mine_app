@@ -36,8 +36,9 @@
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Canvas Confetti -->
+    <!-- Canvas Confetti & html2pdf -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
     <style>
         body {
@@ -208,13 +209,73 @@
                 </div>
             </div>
 
-            <button onclick="goHome()"
-                class="mt-8 px-6 py-2 border border-emerald text-emerald hover:bg-emerald hover:text-cream rounded-full transition-colors flex items-center space-x-2 font-english uppercase tracking-widest text-sm">
-                <i class="fa-solid fa-house"></i>
-                <span>Home</span>
-            </button>
+            <div
+                class="flex flex-col sm:flex-row items-center justify-center sm:space-x-4 mt-8 space-y-4 sm:space-y-0 w-full">
+                <button onclick="goHome()"
+                    class="px-6 py-2 border border-emerald text-emerald hover:bg-emerald hover:text-cream rounded-full transition-colors flex items-center space-x-2 font-english uppercase tracking-widest text-sm w-full sm:w-auto justify-center">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Home</span>
+                </button>
+                <button onclick="downloadLetter()"
+                    class="px-6 py-2 bg-gradient-to-r from-[#D4AF37] to-[#B8860B] text-[#FDFBF7] hover:shadow-lg rounded-full transition-all flex items-center space-x-2 font-english uppercase tracking-widest text-sm transform hover:-translate-y-1 w-full sm:w-auto justify-center">
+                    <i class="fa-solid fa-download"></i>
+                    <span>Download Letter</span>
+                </button>
+            </div>
         </div>
 
+    </div>
+
+    <!-- Hidden Love Letter for PDF generation (Off-screen) -->
+    <div style="position: absolute; left: -9999px; top: 0; width: 800px;">
+        <div id="love-letter-pdf"
+            style="position: relative; background-color: #FDFBF7; color: #064E3B; padding: 60px; min-height: 1100px; font-family: 'Playfair Display', serif;">
+            <!-- decorative borders -->
+            <div
+                style="position: absolute; top: 20px; left: 20px; right: 20px; bottom: 20px; border: 2px solid #D4AF37; opacity: 0.5;">
+            </div>
+            <div
+                style="position: absolute; top: 30px; left: 30px; right: 30px; bottom: 30px; border: 1px solid #064E3B; opacity: 0.3;">
+            </div>
+
+            <div style="text-align: center; margin-top: 50px; margin-bottom: 40px;">
+                <h1 style="font-family: 'Amiri', serif; font-size: 2.5rem; color: #064E3B; margin-bottom: 1rem;"
+                    dir="rtl">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</h1>
+                <div style="width: 100px; height: 1px; background-color: #D4AF37; margin: 0 auto;"></div>
+            </div>
+
+            <div style="position: relative; z-index: 10; padding: 0 40px; line-height: 1.8; font-size: 1.125rem;">
+                <p style="font-weight: bold; font-size: 1.5rem; margin-bottom: 30px;">My Dearest Ishana,</p>
+
+                <p style="margin-bottom: 20px;">Since the very first day our paths crossed in 2022, you have brought a
+                    light into my life that I never knew I was missing. Every moment spent with you has been a beautiful
+                    blessing, a testament to the divine plan Allah has written for us.</p>
+
+                <div style="text-align: center; margin: 40px 0;">
+                    <p style="font-family: 'Amiri', serif; font-size: 1.75rem; color: #064E3B; margin-bottom: 5px;"
+                        dir="rtl">"وَخَلَقْنَاكُمْ أَزْوَاجًا"</p>
+                    <p style="font-size: 0.875rem; color: #D4AF37;">"And We created you in pairs" (Quran 78:8)</p>
+                </div>
+
+                <p style="margin-bottom: 20px;">You are my peace, my home, and my greatest answered dua. As we step into
+                    this new chapter of our lives, I promise to cherish you, respect you, and continue to fall in love
+                    with you every single day in this Dunya and the Akhirah.</p>
+
+                <p style="margin-bottom: 40px;">This is just the beginning of our forever.</p>
+
+                <div style="text-align: right; margin-top: 80px;">
+                    <p style="font-style: italic; margin-bottom: 5px;">With all my love,</p>
+                    <p style="font-weight: bold; font-size: 1.5rem; font-family: 'Playfair Display', serif;">Amaan Ahmed
+                    </p>
+                </div>
+            </div>
+
+            <!-- Corner decorations -->
+            <i class="fa-solid fa-star-and-crescent"
+                style="position: absolute; bottom: 50px; left: 50px; color: #D4AF37; opacity: 0.3; font-size: 2rem;"></i>
+            <i class="fa-solid fa-moon"
+                style="position: absolute; top: 50px; right: 50px; color: #D4AF37; opacity: 0.1; font-size: 4rem;"></i>
+        </div>
     </div>
 
     <script>
@@ -256,6 +317,21 @@
                 btnNo.style.top = '';
             }
             nextScreen(0);
+        }
+
+        // Download PDF Letter Logic
+        function downloadLetter() {
+            const element = document.getElementById('love-letter-pdf');
+            const opt = {
+                margin: 0,
+                filename: 'For_Ishana.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true },
+                jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+            };
+
+            // Generate and download the PDF
+            html2pdf().set(opt).from(element).save();
         }
 
         // Proposal 'No' button run-away logic
