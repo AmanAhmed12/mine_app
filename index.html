@@ -109,95 +109,98 @@
     </style>
 </head>
 
-<body class="antialiased min-h-screen flex items-center justify-center p-4">
+<body class="antialiased min-h-[100dvh] flex items-center justify-center p-4">
 
     <!-- Background decorative crescent -->
-    <i class="fa-solid fa-moon absolute top-10 right-10 text-gold opacity-20 text-8xl md:text-9xl -rotate-12 z-0"></i>
+    <i
+        class="fa-solid fa-moon absolute top-4 md:top-10 right-4 md:right-10 text-gold opacity-20 text-6xl sm:text-8xl md:text-9xl -rotate-12 z-0"></i>
 
     <!-- Screen Container -->
-    <div class="glass-card w-full max-w-2xl p-8 md:p-14 rounded-3xl text-center relative z-10 fade-in"
+    <div class="glass-card w-full max-w-2xl p-6 sm:p-8 md:p-14 rounded-2xl md:rounded-3xl text-center relative z-10 fade-in"
         id="main-container">
 
         <!-- SCREEN 0: Intro -->
-        <div id="screen-0" class="flex flex-col items-center space-y-8">
-            <h1 class="font-arabic text-3xl md:text-4xl text-emerald mb-2 font-bold tracking-wider" dir="rtl">
+        <div id="screen-0" class="flex flex-col items-center space-y-6 sm:space-y-8">
+            <h1 class="font-arabic text-2xl sm:text-3xl md:text-4xl text-emerald mb-2 font-bold tracking-wider"
+                dir="rtl">
                 بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
             </h1>
-            <div class="w-16 h-px bg-gold"></div>
-            <h2 class="text-3xl md:text-4xl font-bold text-emerald">Assalamu Alaikum, Ishana.</h2>
-            <p class="text-lg text-emerald/80 leading-relaxed max-w-md mx-auto">
+            <div class="w-12 sm:w-16 h-px bg-gold"></div>
+            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-emerald">Assalamu Alaikum, Ishana.</h2>
+            <p class="text-base sm:text-lg text-emerald/80 leading-relaxed max-w-md mx-auto">
                 I made something special just for you. Take a deep breath, and let's go on a little journey...
             </p>
             <button onclick="nextScreen(1)"
-                class="btn-primary mt-6 px-10 py-3 rounded-full text-lg font-english uppercase tracking-widest">
+                class="btn-primary mt-6 px-8 sm:px-10 py-3 rounded-full text-base sm:text-lg font-english uppercase tracking-widest">
                 I'm Ready
             </button>
         </div>
 
         <!-- SCREEN 1: Question 1 -->
-        <div id="screen-1" class="hidden flex flex-col items-center space-y-8">
-            <i class="fa-solid fa-hourglass-start text-gold text-4xl mb-4"></i>
-            <h2 class="text-2xl md:text-3xl font-bold text-emerald italic">Since 2022...</h2>
-            <p class="text-lg md:text-xl text-emerald/80 leading-relaxed max-w-md mx-auto">
+        <div id="screen-1" class="hidden flex flex-col items-center space-y-6 sm:space-y-8">
+            <i class="fa-solid fa-hourglass-start text-gold text-3xl sm:text-4xl mb-4"></i>
+            <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-emerald italic">Since 2022...</h2>
+            <p class="text-base sm:text-lg md:text-xl text-emerald/80 leading-relaxed max-w-md mx-auto">
                 You've been the most beautiful part of my life. The days turned into months, and months into years, but
                 my feelings only grew deeper. Do you promise to keep bringing this light into my life?
             </p>
             <button onclick="nextScreen(2)"
-                class="btn-primary mt-6 px-10 py-3 rounded-full text-lg font-english uppercase tracking-widest">
+                class="btn-primary mt-6 px-8 sm:px-10 py-3 rounded-full text-base sm:text-lg font-english uppercase tracking-widest">
                 I Promise
             </button>
         </div>
 
         <!-- SCREEN 2: Question 2 -->
-        <div id="screen-2" class="hidden flex flex-col items-center space-y-8">
-            <i class="fa-solid fa-shield-heart text-gold text-4xl mb-4"></i>
-            <p class="font-arabic text-2xl text-emerald" dir="rtl">"وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
-            <p class="text-lg md:text-xl text-emerald/80 leading-relaxed max-w-md mx-auto">
+        <div id="screen-2" class="hidden flex flex-col items-center space-y-6 sm:space-y-8">
+            <i class="fa-solid fa-shield-heart text-gold text-3xl sm:text-4xl mb-4"></i>
+            <p class="font-arabic text-xl sm:text-2xl md:text-3xl text-emerald px-2" dir="rtl">"وَجَعَلَ بَيْنَكُم
+                مَّوَدَّةً وَرَحْمَةً"</p>
+            <p class="text-base sm:text-lg md:text-xl text-emerald/80 leading-relaxed max-w-md mx-auto">
                 Will you continue to be my safe place, my peace, and my best friend in this Dunya and the Akhirah?
             </p>
             <button onclick="nextScreen(3)"
-                class="btn-primary mt-6 px-10 py-3 rounded-full text-lg font-english uppercase tracking-widest">
+                class="btn-primary mt-6 px-8 sm:px-10 py-3 rounded-full text-base sm:text-lg font-english uppercase tracking-widest">
                 Always & Forever
             </button>
         </div>
 
         <!-- SCREEN 3: The Proposal -->
-        <div id="screen-3" class="hidden flex flex-col items-center space-y-8 relative pb-20">
-            <i class="fa-solid fa-ring text-gold text-5xl mb-4"></i>
-            <h2 class="text-4xl md:text-5xl font-bold text-emerald mb-4">Ishana,</h2>
-            <p class="text-xl md:text-2xl text-emerald leading-relaxed">
+        <div id="screen-3" class="hidden flex flex-col items-center space-y-6 sm:space-y-8 relative pb-24 sm:pb-20">
+            <i class="fa-solid fa-ring text-gold text-4xl sm:text-5xl mb-2 sm:mb-4"></i>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald mb-2 sm:mb-4">Ishana,</h2>
+            <p class="text-lg sm:text-xl md:text-2xl text-emerald leading-relaxed">
                 Will you marry me?
             </p>
 
-            <div id="proposal-wrapper" class="w-full flex justify-center items-center h-24 mt-10 relative">
+            <div id="proposal-wrapper"
+                class="w-full flex justify-center items-center h-28 sm:h-24 mt-8 sm:mt-10 relative">
                 <!-- Yes Button -->
                 <button onclick="accepted()" id="btn-yes"
-                    class="btn-gold absolute px-12 py-4 rounded-full text-xl font-english uppercase tracking-widest font-bold z-20"
+                    class="btn-gold absolute px-10 sm:px-12 py-3 sm:py-4 rounded-full text-lg sm:text-xl font-english uppercase tracking-widest font-bold z-20"
                     style="left: 50%; transform: translateX(-50%);">
                     YES!
                 </button>
 
                 <!-- No Button (Starts visible but hidden if hovered/touched) -->
-                <!-- We place it inline with JS later so its initial position makes sense -->
             </div>
             <button id="btn-no"
-                class="absolute px-8 py-3 rounded-full text-lg font-english bg-gray-200 text-gray-500 border border-gray-300 transition-all duration-200"
-                style="bottom: -20px;">
+                class="absolute px-6 sm:px-8 py-2 sm:py-3 rounded-full text-base sm:text-lg font-english bg-gray-200 text-gray-500 border border-gray-300 transition-all duration-200 -bottom-0 sm:-bottom-5">
                 No
             </button>
         </div>
 
         <!-- SCREEN 4: Accepted (Final Screen) -->
-        <div id="screen-4" class="hidden flex flex-col items-center space-y-8">
-            <h2 class="font-arabic text-4xl text-emerald mb-2" dir="rtl">الْحَمْدُ لِلَّهِ</h2>
-            <h2 class="text-4xl md:text-5xl font-bold text-gold">Alhamdulillah!</h2>
-            <p class="text-xl text-emerald/90 italic">
+        <div id="screen-4" class="hidden flex flex-col items-center space-y-6 sm:space-y-8">
+            <h2 class="font-arabic text-3xl sm:text-4xl text-emerald mb-2" dir="rtl">الْحَمْدُ لِلَّهِ</h2>
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gold">Alhamdulillah!</h2>
+            <p class="text-lg sm:text-xl text-emerald/90 italic">
                 She said yes! I love you, Ishana.
             </p>
 
-            <div class="w-full max-w-sm mt-8 border-t border-gold/30 pt-8">
-                <h4 class="font-english text-sm text-emerald uppercase tracking-widest mb-4">Our Journey So Far</h4>
-                <div class="grid grid-cols-2 gap-4">
+            <div class="w-full max-w-sm mt-6 sm:mt-8 border-t border-gold/30 pt-6 sm:pt-8">
+                <h4 class="font-english text-xs sm:text-sm text-emerald uppercase tracking-widest mb-4">Our Journey So
+                    Far</h4>
+                <div class="grid grid-cols-2 gap-2 sm:gap-4">
                     <div class="flex flex-col items-center p-3 bg-emerald/5 rounded-xl border border-gold/20">
                         <span id="days" class="text-2xl font-bold text-emerald">0</span>
                         <span class="text-[10px] uppercase tracking-wider text-emerald/60">Days</span>
@@ -312,7 +315,7 @@
             if (btnNo) {
                 btnNo.style.display = 'block';
                 btnNo.style.position = 'absolute';
-                btnNo.style.bottom = '-20px';
+                btnNo.style.bottom = '';
                 btnNo.style.left = '';
                 btnNo.style.top = '';
             }
