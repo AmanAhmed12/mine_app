@@ -207,6 +207,12 @@
                     </div>
                 </div>
             </div>
+
+            <button onclick="goHome()"
+                class="mt-8 px-6 py-2 border border-emerald text-emerald hover:bg-emerald hover:text-cream rounded-full transition-colors flex items-center space-x-2 font-english uppercase tracking-widest text-sm">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </button>
         </div>
 
     </div>
@@ -224,18 +230,32 @@
                 }
             }
             // Show next screen with animation
-            const nextScreen = document.getElementById(`screen-${nextId}`);
-            if (nextScreen) {
-                nextScreen.classList.remove('hidden');
+            const nextScreenElement = document.getElementById(`screen-${nextId}`);
+            if (nextScreenElement) {
+                nextScreenElement.classList.remove('hidden');
                 // Trigger reflow
-                void nextScreen.offsetWidth;
-                nextScreen.classList.add('fade-in');
+                void nextScreenElement.offsetWidth;
+                nextScreenElement.classList.add('fade-in');
             }
 
             // Setup proposal screen layout when reached
             if (nextId === 3) {
                 setupProposalButtons();
             }
+        }
+
+        // Return to first screen logic
+        function goHome() {
+            // Reset the rogue No button to original positioning
+            const btnNo = document.getElementById('btn-no');
+            if (btnNo) {
+                btnNo.style.display = 'block';
+                btnNo.style.position = 'absolute';
+                btnNo.style.bottom = '-20px';
+                btnNo.style.left = '';
+                btnNo.style.top = '';
+            }
+            nextScreen(0);
         }
 
         // Proposal 'No' button run-away logic
