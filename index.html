@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Digital Love Letter - Amaan & Ishana</title>
+    <title>For Ishana</title>
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,9 +33,6 @@
         }
     </script>
 
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
     <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
@@ -50,339 +47,285 @@
             color: #064E3B;
             font-family: 'Playfair Display', serif;
             overflow-x: hidden;
+            overflow-y: hidden;
+            /* Prevent scrolling jumping when NO button moves */
         }
 
         .glass-card {
-            background: rgba(253, 251, 247, 0.6);
+            background: rgba(253, 251, 247, 0.7);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            box-shadow: 0 8px 32px 0 rgba(6, 78, 59, 0.1);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            box-shadow: 0 10px 40px 0 rgba(6, 78, 59, 0.15);
         }
 
-        .text-gold-gradient {
-            background: linear-gradient(to right, #D4AF37, #B8860B);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .fade-in {
+            animation: fadeIn 0.8s ease-in-out forwards;
         }
 
-        /* Modal specific styles */
-        #dua-modal {
-            transition: opacity 0.3s ease-in-out;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        .mashallah-badge {
-            background: rgba(212, 175, 55, 0.9);
+        /* Essential for absolute positioning of moving button */
+        #proposal-wrapper {
+            position: relative;
+        }
+
+        .btn-primary {
+            background-color: #064E3B;
             color: #FDFBF7;
-            backdrop-filter: blur(4px);
+            border: 1px solid #064E3B;
+            transition: all 0.3s;
         }
 
-        /* smooth scroll */
-        html {
-            scroll-behavior: smooth;
+        .btn-primary:hover {
+            background-color: #FDFBF7;
+            color: #064E3B;
+            border-color: #064E3B;
+            box-shadow: 0 0 15px rgba(6, 78, 59, 0.2);
+        }
+
+        .btn-gold {
+            background: linear-gradient(to right, #D4AF37, #B8860B);
+            color: #FDFBF7;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-gold:hover {
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            transform: translateY(-2px);
         }
     </style>
 </head>
 
-<body class="antialiased min-h-screen relative flex flex-col items-center">
+<body class="antialiased min-h-screen flex items-center justify-center p-4">
 
-    <!-- Navigation/Header -->
-    <nav class="w-full py-6 flex justify-center items-center relative z-10" data-aos="fade-down"
-        data-aos-duration="1500">
-        <div class="text-center">
-            <h1 class="font-arabic text-3xl md:text-5xl text-emerald mb-2 font-bold tracking-wider" dir="rtl">
+    <!-- Background decorative crescent -->
+    <i class="fa-solid fa-moon absolute top-10 right-10 text-gold opacity-20 text-8xl md:text-9xl -rotate-12 z-0"></i>
+
+    <!-- Screen Container -->
+    <div class="glass-card w-full max-w-2xl p-8 md:p-14 rounded-3xl text-center relative z-10 fade-in"
+        id="main-container">
+
+        <!-- SCREEN 0: Intro -->
+        <div id="screen-0" class="flex flex-col items-center space-y-8">
+            <h1 class="font-arabic text-3xl md:text-4xl text-emerald mb-2 font-bold tracking-wider" dir="rtl">
                 بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ
             </h1>
-            <p class="font-english text-sm tracking-[0.2em] text-gold uppercase">In the name of Allah, Most Gracious,
-                Most Merciful</p>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <main
-        class="flex-grow w-full max-w-5xl px-4 sm:px-6 lg:px-8 flex flex-col items-center space-y-24 py-12 relative z-10">
-
-        <!-- Hero Section -->
-        <section class="text-center space-y-6" data-aos="zoom-in" data-aos-duration="2000">
-            <div class="inline-block p-4 rounded-full border border-gold/40 mb-4 bg-emerald/5 backdrop-blur-sm">
-                <i class="fa-solid fa-moon text-gold text-2xl"></i>
-            </div>
-            <h2 class="text-5xl md:text-7xl font-bold text-emerald mb-4">
-                Amaan <span class="text-gold italic font-light">&</span> Ishana
-            </h2>
-            <div class="flex items-center justify-center space-x-4 text-emerald/80 font-arabic text-xl">
-                <span>٢٦ نوفمبر ٢٠٠٠</span>
-                <i class="fa-solid fa-heart text-gold text-sm mx-4"></i>
-                <span>٢٨ يناير ٢٠٠٢</span>
-            </div>
-            <div
-                class="flex items-center justify-center space-x-4 text-emerald/80 font-english text-sm tracking-widest mt-2">
-                <span>Nov 26, 2000</span>
-                <span class="mx-4 text-gold">•</span>
-                <span>Jan 28, 2002</span>
-            </div>
-            <p class="mt-8 text-lg text-emerald/70 max-w-2xl mx-auto leading-relaxed">
-                A digital love letter, celebrating a beautiful journey woven with patience, faith, and endless
-                blessings.
+            <div class="w-16 h-px bg-gold"></div>
+            <h2 class="text-3xl md:text-4xl font-bold text-emerald">Assalamu Alaikum, Ishana.</h2>
+            <p class="text-lg text-emerald/80 leading-relaxed max-w-md mx-auto">
+                I made something special just for you. Take a deep breath, and let's go on a little journey...
             </p>
-        </section>
-
-        <!-- The 'Aqd' (Contract of Hearts) Counter -->
-        <section class="w-full max-w-3xl" data-aos="fade-up" data-aos-duration="1500">
-            <div class="glass-card rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
-                <!-- Decorative corners -->
-                <div
-                    class="absolute top-0 left-0 w-16 h-16 border-t-2 border-l-2 border-gold opacity-50 rounded-tl-3xl m-4">
-                </div>
-                <div
-                    class="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-gold opacity-50 rounded-tr-3xl m-4">
-                </div>
-                <div
-                    class="absolute bottom-0 left-0 w-16 h-16 border-b-2 border-l-2 border-gold opacity-50 rounded-bl-3xl m-4">
-                </div>
-                <div
-                    class="absolute bottom-0 right-0 w-16 h-16 border-b-2 border-r-2 border-gold opacity-50 rounded-br-3xl m-4">
-                </div>
-
-                <div class="mb-8">
-                    <h3 class="font-arabic text-3xl text-emerald mb-2" dir="rtl">رِبَاطُ الْقُلُوبِ</h3>
-                    <h4 class="font-english text-xl text-gold italic">The Contract of Hearts</h4>
-                </div>
-
-                <div class="flex flex-col items-center justify-center space-y-4 mb-8">
-                    <p class="font-english text-emerald uppercase tracking-widest text-sm">Since 2022</p>
-                    <div class="w-px h-6 bg-gold"></div>
-                    <p class="font-arabic text-emerald text-lg" dir="rtl">منذ عام ٢٠٢٢</p>
-                </div>
-
-                <div id="counter" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                    <div class="flex flex-col items-center">
-                        <span id="days" class="text-4xl md:text-5xl font-bold text-emerald mb-1">00</span>
-                        <span class="text-xs uppercase tracking-wider text-emerald/60">Days</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="hours" class="text-4xl md:text-5xl font-bold text-emerald mb-1">00</span>
-                        <span class="text-xs uppercase tracking-wider text-emerald/60">Hours</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="minutes" class="text-4xl md:text-5xl font-bold text-emerald mb-1">00</span>
-                        <span class="text-xs uppercase tracking-wider text-emerald/60">Minutes</span>
-                    </div>
-                    <div class="flex flex-col items-center">
-                        <span id="seconds" class="text-4xl md:text-5xl font-bold text-emerald mb-1">00</span>
-                        <span class="text-xs uppercase tracking-wider text-emerald/60">Seconds</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Spiritual Quotes Section -->
-        <section class="w-full max-w-4xl" data-aos="fade-up" data-aos-duration="1500">
-            <div class="glass-card rounded-2xl p-10 md:p-14 text-center relative">
-                <i class="fa-solid fa-quote-right absolute top-6 right-8 text-gold mt-4 opacity-20 text-6xl"></i>
-                <div class="relative z-10 space-y-8">
-                    <p class="font-arabic text-2xl md:text-4xl leading-relaxed text-emerald" dir="rtl">
-                        "وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ
-                        بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"
-                    </p>
-                    <div class="w-16 h-px bg-gold mx-auto"></div>
-                    <p class="font-english text-xl md:text-2xl text-emerald/90 italic leading-relaxed">
-                        "And of His signs is that He created for you from yourselves mates that you may find tranquility
-                        in them; and He placed between you affection and mercy."
-                    </p>
-                    <p class="text-sm font-english text-gold uppercase tracking-widest mt-6">
-                        — Quran 30:21
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Bento Box Journey / Gallery -->
-        <section class="w-full" data-aos="fade-up" data-aos-duration="1500">
-            <div class="text-center mb-12">
-                <h3 class="font-english text-3xl md:text-4xl text-emerald mb-2">Our Journey</h3>
-                <div class="w-24 h-px bg-gold mx-auto mt-4"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[250px] md:auto-rows-[300px]">
-
-                <!-- Card 1 (Spans 2 columns on tablet+) -->
-                <div
-                    class="glass-card rounded-2xl overflow-hidden relative group md:col-span-2 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
-                    <img src="https://images.unsplash.com/photo-1542452255191-c85a98f2c5d1?auto=format&fit=crop&q=80&w=1200"
-                        alt="Islamic Architecture Mosque"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-emerald/80 to-transparent opacity-60"></div>
-                    <div class="absolute top-4 right-4 mashallah-badge px-3 py-1 rounded-full text-sm font-arabic"
-                        dir="rtl">
-                        مَا شَاءَ ٱللَّٰهُ
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div
-                    class="glass-card rounded-2xl overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 delay-100">
-                    <img src="https://images.unsplash.com/photo-1564507004663-b6dfb3c824d5?auto=format&fit=crop&q=80&w=800"
-                        alt="Beautiful Nature"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-emerald/80 to-transparent opacity-60"></div>
-                    <div class="absolute top-4 right-4 mashallah-badge px-3 py-1 rounded-full text-sm font-arabic"
-                        dir="rtl">
-                        مَا شَاءَ ٱللَّٰهُ
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div
-                    class="glass-card rounded-2xl overflow-hidden relative group cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500">
-                    <img src="https://images.unsplash.com/photo-1596489345225-b40b15cf48eb?auto=format&fit=crop&q=80&w=800"
-                        alt="Islamic Calligraphy / Architecture"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-emerald/80 to-transparent opacity-60"></div>
-                    <div class="absolute top-4 right-4 mashallah-badge px-3 py-1 rounded-full text-sm font-arabic"
-                        dir="rtl">
-                        مَا شَاءَ ٱللَّٰهُ
-                    </div>
-                </div>
-
-                <!-- Card 4 (Spans 2 columns on tablet+) -->
-                <div
-                    class="glass-card rounded-2xl overflow-hidden relative group md:col-span-2 cursor-pointer shadow-sm hover:shadow-xl transition-all duration-500 delay-100">
-                    <img src="https://images.unsplash.com/photo-1522013822180-87a1d13dbba3?auto=format&fit=crop&q=80&w=1200"
-                        alt="Serene Nature landscape"
-                        class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-emerald/80 to-transparent opacity-60"></div>
-                    <div class="absolute top-4 right-4 mashallah-badge px-3 py-1 rounded-full text-sm font-arabic"
-                        dir="rtl">
-                        مَا شَاءَ ٱللَّٰهُ
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Interactive 'Dua' Button -->
-        <section class="w-full flex justify-center pb-20 pt-10" data-aos="zoom-in" data-aos-duration="1000">
-            <button id="dua-btn"
-                class="relative overflow-hidden group bg-emerald text-cream px-10 py-5 rounded-full shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] transition-all duration-500 transform hover:-translate-y-1">
-                <div
-                    class="absolute inset-0 w-full h-full bg-gradient-to-r from-emerald via-[#086c52] to-emerald opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                </div>
-
-                <span class="relative z-10 flex items-center space-x-3">
-                    <i class="fa-solid fa-hands-praying text-gold text-xl"></i>
-                    <span class="font-english text-lg tracking-wide uppercase font-semibold">Make a Dua</span>
-                </span>
-            </button>
-        </section>
-
-    </main>
-
-    <!-- Modal for Dua -->
-    <div id="dua-modal"
-        class="fixed inset-0 z-50 flex items-center justify-center bg-emerald/90 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500">
-        <div class="glass-card w-11/12 max-w-md p-8 rounded-3xl text-center transform scale-95 transition-transform duration-500"
-            id="dua-modal-content">
-            <i class="fa-solid fa-star-and-crescent text-gold text-4xl mb-6 inline-block"></i>
-            <h2 class="font-arabic text-3xl text-emerald mb-4" dir="rtl">بَارَكَ ٱللَّٰهُ لَكُمَا</h2>
-            <p class="font-english text-xl text-emerald/80 italic mb-8">"May Allah bless your union."</p>
-
-            <button id="close-modal"
-                class="bg-gold/20 hover:bg-gold/30 text-emerald font-bold py-2 px-8 rounded-full transition-colors border border-gold/50 font-english uppercase tracking-wider text-sm">
-                Ameen
+            <button onclick="nextScreen(1)"
+                class="btn-primary mt-6 px-10 py-3 rounded-full text-lg font-english uppercase tracking-widest">
+                I'm Ready
             </button>
         </div>
+
+        <!-- SCREEN 1: Question 1 -->
+        <div id="screen-1" class="hidden flex flex-col items-center space-y-8">
+            <i class="fa-solid fa-hourglass-start text-gold text-4xl mb-4"></i>
+            <h2 class="text-2xl md:text-3xl font-bold text-emerald italic">Since 2022...</h2>
+            <p class="text-lg md:text-xl text-emerald/80 leading-relaxed max-w-md mx-auto">
+                You've been the most beautiful part of my life. The days turned into months, and months into years, but
+                my feelings only grew deeper. Do you promise to keep bringing this light into my life?
+            </p>
+            <button onclick="nextScreen(2)"
+                class="btn-primary mt-6 px-10 py-3 rounded-full text-lg font-english uppercase tracking-widest">
+                I Promise
+            </button>
+        </div>
+
+        <!-- SCREEN 2: Question 2 -->
+        <div id="screen-2" class="hidden flex flex-col items-center space-y-8">
+            <i class="fa-solid fa-shield-heart text-gold text-4xl mb-4"></i>
+            <p class="font-arabic text-2xl text-emerald" dir="rtl">"وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً"</p>
+            <p class="text-lg md:text-xl text-emerald/80 leading-relaxed max-w-md mx-auto">
+                Will you continue to be my safe place, my peace, and my best friend in this Dunya and the Akhirah?
+            </p>
+            <button onclick="nextScreen(3)"
+                class="btn-primary mt-6 px-10 py-3 rounded-full text-lg font-english uppercase tracking-widest">
+                Always & Forever
+            </button>
+        </div>
+
+        <!-- SCREEN 3: The Proposal -->
+        <div id="screen-3" class="hidden flex flex-col items-center space-y-8 relative pb-20">
+            <i class="fa-solid fa-ring text-gold text-5xl mb-4"></i>
+            <h2 class="text-4xl md:text-5xl font-bold text-emerald mb-4">Ishana,</h2>
+            <p class="text-xl md:text-2xl text-emerald leading-relaxed">
+                Will you marry me?
+            </p>
+
+            <div id="proposal-wrapper" class="w-full flex justify-center items-center h-24 mt-10 relative">
+                <!-- Yes Button -->
+                <button onclick="accepted()" id="btn-yes"
+                    class="btn-gold absolute px-12 py-4 rounded-full text-xl font-english uppercase tracking-widest font-bold z-20"
+                    style="left: 50%; transform: translateX(-50%);">
+                    YES!
+                </button>
+
+                <!-- No Button (Starts visible but hidden if hovered/touched) -->
+                <!-- We place it inline with JS later so its initial position makes sense -->
+            </div>
+            <button id="btn-no"
+                class="absolute px-8 py-3 rounded-full text-lg font-english bg-gray-200 text-gray-500 border border-gray-300 transition-all duration-200"
+                style="bottom: -20px;">
+                No
+            </button>
+        </div>
+
+        <!-- SCREEN 4: Accepted (Final Screen) -->
+        <div id="screen-4" class="hidden flex flex-col items-center space-y-8">
+            <h2 class="font-arabic text-4xl text-emerald mb-2" dir="rtl">الْحَمْدُ لِلَّهِ</h2>
+            <h2 class="text-4xl md:text-5xl font-bold text-gold">Alhamdulillah!</h2>
+            <p class="text-xl text-emerald/90 italic">
+                She said yes! I love you, Ishana.
+            </p>
+
+            <div class="w-full max-w-sm mt-8 border-t border-gold/30 pt-8">
+                <h4 class="font-english text-sm text-emerald uppercase tracking-widest mb-4">Our Journey So Far</h4>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="flex flex-col items-center p-3 bg-emerald/5 rounded-xl border border-gold/20">
+                        <span id="days" class="text-2xl font-bold text-emerald">0</span>
+                        <span class="text-[10px] uppercase tracking-wider text-emerald/60">Days</span>
+                    </div>
+                    <div class="flex flex-col items-center p-3 bg-emerald/5 rounded-xl border border-gold/20">
+                        <span id="hours" class="text-2xl font-bold text-emerald">0</span>
+                        <span class="text-[10px] uppercase tracking-wider text-emerald/60">Hours</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Initialize AOS
-        AOS.init({
-            once: true,
-            offset: 50,
-        });
+        // Transition between screens
+        function nextScreen(nextId) {
+            // Hide all screens
+            for (let i = 0; i <= 4; i++) {
+                const screen = document.getElementById(`screen-${i}`);
+                if (screen) {
+                    screen.classList.add('hidden');
+                    // Remove animation class to re-trigger it
+                    screen.classList.remove('fade-in');
+                }
+            }
+            // Show next screen with animation
+            const nextScreen = document.getElementById(`screen-${nextId}`);
+            if (nextScreen) {
+                nextScreen.classList.remove('hidden');
+                // Trigger reflow
+                void nextScreen.offsetWidth;
+                nextScreen.classList.add('fade-in');
+            }
 
-        // The 'Aqd' Counter Logic
-        // Since the exact date in 2022 is not provided, we will start from January 1, 2022
+            // Setup proposal screen layout when reached
+            if (nextId === 3) {
+                setupProposalButtons();
+            }
+        }
+
+        // Proposal 'No' button run-away logic
+        function setupProposalButtons() {
+            const btnYes = document.getElementById('btn-yes');
+            const btnNo = document.getElementById('btn-no');
+            const wrapper = document.getElementById('screen-3');
+
+            // Initially position 'No' right below 'Yes' or beside it based on desktop
+            const repositionNo = () => {
+                const maxX = window.innerWidth - btnNo.offsetWidth - 20;
+                const maxY = window.innerHeight - btnNo.offsetHeight - 20;
+
+                // Random position within viewport
+                const randomX = Math.max(20, Math.floor(Math.random() * maxX));
+                const randomY = Math.max(20, Math.floor(Math.random() * maxY));
+
+                btnNo.style.position = 'fixed'; // Escape the container bounds
+                btnNo.style.left = `${randomX}px`;
+                btnNo.style.top = `${randomY}px`;
+            };
+
+            // Touch support for mobile and mouse over for desktop
+            btnNo.addEventListener('mouseover', repositionNo);
+            btnNo.addEventListener('touchstart', (e) => {
+                e.preventDefault(); // prevent click
+                repositionNo();
+            });
+            btnNo.addEventListener('click', repositionNo);
+        }
+
+        // Final accept logic
+        function accepted() {
+            // Hide the rogue No button forever if they somehow catch it
+            document.getElementById('btn-no').style.display = 'none';
+
+            nextScreen(4);
+            fireConfetti();
+        }
+
+        // Confetti effect
+        function fireConfetti() {
+            const duration = 5 * 1000;
+            const animationEnd = Date.now() + duration;
+            const defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 100, colors: ['#D4AF37', '#B8860B', '#064E3B'] };
+
+            function randomInRange(min, max) {
+                return Math.random() * (max - min) + min;
+            }
+
+            const interval = setInterval(function () {
+                const timeLeft = animationEnd - Date.now();
+
+                if (timeLeft <= 0) {
+                    return clearInterval(interval);
+                }
+
+                const particleCount = 50 * (timeLeft / duration);
+                // since particles fall down, start a bit higher than random
+                confetti(Object.assign({}, defaults, {
+                    particleCount,
+                    origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 }
+                }));
+                confetti(Object.assign({}, defaults, {
+                    particleCount,
+                    origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 }
+                }));
+            }, 250);
+        }
+
+        // Counter Logic from 2022
         const startDate = new Date('2022-01-01T00:00:00');
-
         function updateCounter() {
             const now = new Date();
             const diff = now - startDate;
 
-            // Calculate time parts
             const days = Math.floor(diff / (1000 * 60 * 60 * 24));
             const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
-            const minutes = Math.floor((diff / 1000 / 60) % 60);
-            const seconds = Math.floor((diff / 1000) % 60);
 
-            // Update DOM
-            document.getElementById('days').innerText = days.toString().padStart(2, '0');
-            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
-            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
-            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+            const dElem = document.getElementById('days');
+            const hElem = document.getElementById('hours');
+
+            if (dElem && hElem) {
+                dElem.innerText = days;
+                hElem.innerText = hours;
+            }
         }
-
-        // Update every second
         setInterval(updateCounter, 1000);
-        updateCounter(); // Initial call
-
-        // Interactive 'Dua' Button & Confetti Logic
-        const duaBtn = document.getElementById('dua-btn');
-        const duaModal = document.getElementById('dua-modal');
-        const closeModal = document.getElementById('close-modal');
-        const modalContent = document.getElementById('dua-modal-content');
-
-        duaBtn.addEventListener('click', () => {
-            // Trigger Confetti (Gold color palette)
-            const count = 200;
-            const defaults = {
-                origin: { y: 0.7 },
-                colors: ['#D4AF37', '#B8860B', '#FDFBF7', '#064E3B']
-            };
-
-            function fire(particleRatio, opts) {
-                confetti(Object.assign({}, defaults, opts, {
-                    particleCount: Math.floor(count * particleRatio)
-                }));
-            }
-
-            fire(0.25, { spread: 26, startVelocity: 55 });
-            fire(0.2, { spread: 60 });
-            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
-            fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
-            fire(0.1, { spread: 120, startVelocity: 45 });
-
-            // Show Modal
-            duaModal.classList.remove('opacity-0', 'pointer-events-none');
-            duaModal.classList.add('opacity-100');
-
-            // Pop effect for modal content
-            setTimeout(() => {
-                modalContent.classList.remove('scale-95');
-                modalContent.classList.add('scale-100');
-            }, 50);
-        });
-
-        // Close Modal Logic
-        closeModal.addEventListener('click', () => {
-            duaModal.classList.remove('opacity-100');
-            duaModal.classList.add('opacity-0', 'pointer-events-none');
-
-            modalContent.classList.remove('scale-100');
-            modalContent.classList.add('scale-95');
-        });
-
-        // Close modal on outside click
-        duaModal.addEventListener('click', (e) => {
-            if (e.target === duaModal) {
-                closeModal.click();
-            }
-        });
+        updateCounter();
     </script>
-
 </body>
 
 </html>
